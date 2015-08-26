@@ -24,7 +24,7 @@ Examples:
 repo-deps mattdesl/marvel-comics-api --pretty --filter=dependencies
 ```
 
-Or, compiling a list from many dependencies (de-duplicated and sorted) and printing the registry data to JSON:
+Or, compiling a list from many repos (de-duplicated and sorted) and printing the registry data to JSON:
 
 ```sh
 repo-deps mattdesl/marvel-comics-api Jam3/gh-api-stream > data.json
