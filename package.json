@@ -1,6 +1,6 @@
 {
   "name": "repo-deps",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "a high-level CLI tool to grab many dependencies from GitHub repos",
   "main": "index.js",
   "license": "MIT",
