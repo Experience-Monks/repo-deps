@@ -2,7 +2,7 @@
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-![screen](http://i.imgur.com/xqr8vP8.png)
+![screen](http://i.imgur.com/Xa3ANaJ.png)
 
 A high-level CLI tool to grab dependencies from a set of GitHub repos.
 

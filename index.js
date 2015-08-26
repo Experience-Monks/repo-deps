@@ -38,5 +38,8 @@ function listAllDependencies (repos, opt, cb) {
 }
 
 function depCompare (a, b) {
-  return a.name.localeCompare(b.name) - a.version.localeCompare(b.version)
+  if (a.name === b.name) {
+    return a.version.localeCompare(b.version)
+  }
+  return a.name.localeCompare(b.name)
 }
