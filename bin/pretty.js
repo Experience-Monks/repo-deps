@@ -2,6 +2,7 @@ var color = require('term-color')
 var wordWrap = require('word-wrap')
 var ghUrl = require('github-url-to-object')
 var newArray = require('new-array')
+var depCompare = require('../lib/dep-compare')
 
 var depKeys = [
   'dependencies',
@@ -15,7 +16,7 @@ function prettyPrinter (packages) {
   var dicts = depKeys.reduce(function (dict, key) {
     dict[key] = packages.filter(function (pkg) {
       return pkg.list === key
-    })
+    }).sort(depCompare)
     return dict
   }, {})
 
@@ -24,9 +25,10 @@ function prettyPrinter (packages) {
       return
     }
 
-    var dashes = newArray(key.length).map(function (x) {
+    var dashes = newArray(key.length).map(function () {
       return '-'
     }).join('')
+
     console.log(color.green(color.bold(key + '\n' + dashes)))
     dicts[key].forEach(printPackage)
     console.log()
@@ -57,13 +59,13 @@ function printPackage (pkg) {
 }
 
 function getUrl (repository) {
+  var result
   if (typeof repository === 'string') {
-    return ghUrl(repository).https_url
+    result = ghUrl(repository)
   } else if (repository) {
-    return ghUrl(repository.url).https_url
-  } else {
-    return null
+    result = ghUrl(repository.url)
   }
+  return result ? result.https_url : null
 }
 
 function countList (packages, key) {

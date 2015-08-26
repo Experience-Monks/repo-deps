@@ -2,6 +2,7 @@ var mapLimit = require('map-limit')
 var uniq = require('uniq')
 var repoDeps = require('gh-repo-dependencies')
 var assign = require('object-assign')
+var depCompare = require('./lib/dep-compare')
 
 var noop = function () {}
 
@@ -35,11 +36,4 @@ function listAllDependencies (repos, opt, cb) {
     uniq(allDeps, depCompare)
     cb(err, allDeps)
   })
-}
-
-function depCompare (a, b) {
-  if (a.name === b.name) {
-    return a.version.localeCompare(b.version)
-  }
-  return a.name.localeCompare(b.name)
 }
