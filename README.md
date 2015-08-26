@@ -22,7 +22,7 @@ Or, saving common JSON to a file:
 repo-deps mattdesl/marvel-comics-api Jam3/gh-api-stream > data.json
 ```
 
-You can use the `--raw` data if you want raw reigstry data (all versions).
+You can use the `--raw` flag if you want raw reigstry data (all versions).
 
 ## Usage
 
