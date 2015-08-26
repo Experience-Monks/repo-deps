@@ -1,0 +1,50 @@
+{
+  "name": "repo-deps",
+  "version": "1.0.0",
+  "description": "a high-level CLI tool to grab many dependencies from GitHub repos",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "repo-deps": "./bin/cmd.js"
+  },
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "gh-repo-dependencies": "^1.0.0",
+    "ghauth": "^3.0.0",
+    "github-url-to-object": "^1.5.2",
+    "map-limit": "0.0.1",
+    "minimist": "^1.2.0",
+    "object-assign": "^4.0.1",
+    "semver": "^5.0.1",
+    "term-color": "^1.0.1",
+    "uniq": "^1.0.1",
+    "word-wrap": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "github",
+    "repo",
+    "repos",
+    "dependencies",
+    "deps",
+    "dependency",
+    "package.json",
+    "package",
+    "json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jam3/repo-deps.git"
+  },
+  "homepage": "https://github.com/Jam3/repo-deps",
+  "bugs": {
+    "url": "https://github.com/Jam3/repo-deps/issues"
+  }
+}
