@@ -2,9 +2,17 @@
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-A high-level CLI tool to grab many dependencies from a set of GitHub repos.
+![screen](http://i.imgur.com/xqr8vP8.png)
+
+A high-level CLI tool to grab dependencies from a set of GitHub repos.
 
 For a lower level API, see [gh-repo-dependencies](https://www.npmjs.com/package/gh-repo-dependencies).
+
+## Install
+
+```sh
+npm install repo-deps -g
+```
 
 ## Examples
 
@@ -33,10 +41,10 @@ Usage:
   repo-deps repositories [opt]
 
 Options:
-  --raw       raw registry JSON
-  --pretty    pretty print the results
-  --filter    filter to "dependencies" or "devDependencies"
-  --no-auth   do not try to authorize GitHub API
+  --raw, -r      raw registry JSON
+  --pretty, -p   pretty print the results
+  --filter, -f   filter to "dependencies" or "devDependencies"
+  --no-auth      do not try to authorize GitHub API
 ```
 
 Repo names are simple URLs like `"user/repo"` or a fully qualified `"git://"` URL. See [here](https://www.npmjs.com/package/github-url-to-object) for supported formats.
@@ -44,7 +52,7 @@ Repo names are simple URLs like `"user/repo"` or a fully qualified `"git://"` UR
 You can append a `ref` (commit SHA or branch name) to the name like so:
 
 ```sh
-repo-deps mattdesl/budo#next
+repo-deps mattdesl/budo#next stackgl/glslify --pretty
 ```
 
 ## License

@@ -4,6 +4,11 @@ var ghManyRepoDeps = require('../')
 var simpleStats = require('../lib/simple-stats')
 var prettyPrint = require('./pretty')
 var argv = require('minimist')(process.argv.slice(2), {
+  alias: {
+    pretty: 'p',
+    raw: 'r',
+    filter: 'f'
+  },
   boolean: ['auth'],
   default: { auth: true }
 })

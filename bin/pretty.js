@@ -12,12 +12,16 @@ var depKeys = [
 module.exports = prettyPrinter
 function prettyPrinter (packages) {
   packages.forEach(function (pkg) {
-    var repoUrl = getUrl(pkg.repository || pkg.homepage).https_url || pkg.homepage
     console.log(
       color.bold(pkg.name),
       color.dim(pkg.version),
-      color.cyan(repoUrl),
       '(' + (pkg.license || 'no license') + ')')
+
+    var repoUrl = getUrl(pkg.repository || pkg.homepage)
+    if (repoUrl) {
+      console.log('  ' + color.cyan(repoUrl))
+    }
+
     var lines = wordWrap(pkg.description, { width: 60 })
     lines = lines.split('\n').map(function (line) {
       return '  ' + line
@@ -33,9 +37,11 @@ function prettyPrinter (packages) {
 
 function getUrl (repository) {
   if (typeof repository === 'string') {
-    return ghUrl(repository)
+    return ghUrl(repository).https_url
+  } else if (repository) {
+    return ghUrl(repository.url).https_url
   } else {
-    return ghUrl(repository.url)
+    return null
   }
 }
 
