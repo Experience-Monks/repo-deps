@@ -9,7 +9,7 @@ var argv = require('minimist')(process.argv.slice(2), {
     raw: 'r',
     filter: 'f'
   },
-  boolean: ['auth'],
+  boolean: ['auth', 'pretty', 'raw'],
   default: { auth: true }
 })
 
