@@ -4,7 +4,7 @@
 
 ![screen](http://i.imgur.com/Xa3ANaJ.png)
 
-A high-level CLI tool to grab dependencies from a set of GitHub repos.
+A high-level CLI tool to grab dependencies from a set of GitHub repos. Prints JSON to `stdout`, but can also print list format with the `--pretty` flag.
 
 For a lower level API, see [gh-repo-dependencies](https://www.npmjs.com/package/gh-repo-dependencies).
 
