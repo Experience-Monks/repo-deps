@@ -39,7 +39,7 @@ function run (token) {
     if (err) throw err
     
     if (!argv.raw || argv.pretty) {
-      data = data.map(simpleStats)
+      data = data.map(simpleStats).filter(Boolean)
     }
       
     if (argv.pretty) {
