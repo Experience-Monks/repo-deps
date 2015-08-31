@@ -55,6 +55,8 @@ You can append a `ref` (commit SHA or branch name) to the name like so:
 repo-deps mattdesl/budo#next stackgl/glslify --pretty
 ```
 
+*Note:* Packages that do not have an associated npm module (eg: private GitHub dependencies) will be left out of the results, unless `raw` is specified in which case the `package.stats` field for that package will be null.
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/Jam3/repo-deps/blob/master/LICENSE.md) for details.
